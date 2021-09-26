@@ -9,14 +9,49 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var imageView: UIImageView!
+    var currentAnimation = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imageView = UIImageView(image: UIImage(named: "download"))
+        imageView.center = CGPoint(x: 220, y: 400)
+        view.addSubview(imageView)
         
         
-        // Do any additional setup after loading the view.
     }
+    @IBAction func tabBtn(_ sender: UIButton){
+        sender.isHidden = true
+        
+        UIView.animate(withDuration: 1, delay: 0, options: []) {
+            switch self.currentAnimation {
+            case 0:
+                self.imageView.transform = CGAffineTransform(scaleX: 2, y: 2)
+                break
+            case 1:
+                self.imageView.transform = .identity
+                break
+            case 2:
+                self.imageView.transform = CGAffineTransform(translationX: -150, y:-300 )
+                break
+            case 3:
+                self.imageView.transform = .identity
+                break
+            default:
+                break
+            }
+            
+        } completion: { finished in
+            sender.isHidden = false
+        }
 
+        
+        currentAnimation += 1
+        if currentAnimation > 7{
+            currentAnimation = 0
+        }
+    }
 
 }
 

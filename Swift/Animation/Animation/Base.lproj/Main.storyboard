@@ -1,24 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <accessibilityOverrides isEnabled="YES" dynamicTypePreference="4"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Animation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Er2-wh-fZL">
+                                <rect key="frame" x="179.5" y="725" width="55" height="37"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Tap"/>
+                                <connections>
+                                    <action selector="tabBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EAu-mS-Dfn"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Er2-wh-fZL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fLh-YZ-wJV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Er2-wh-fZL" secondAttribute="bottom" constant="100" id="gIR-Ee-r7Z"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="35" y="84"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="I6H-M5-VLO">
+            <objects>
+                <viewController id="YtW-Nk-G9x" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ura-Fy-tNk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="imp-Ek-ath">
+                                <rect key="frame" x="0.0" y="44" width="414" height="418"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sR0-1K-cv7">
+                                <rect key="frame" x="0.0" y="462" width="414" height="400"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="7Rp-vO-RMZ"/>
+                                    <constraint firstAttribute="width" constant="414" id="R9p-MP-nSz"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7Rp-vO-RMZ"/>
+                                        <exclude reference="R9p-MP-nSz"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="R9p-MP-nSz"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="7Rp-vO-RMZ"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oKu-OY-ZUf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oKu-OY-ZUf" firstAttribute="trailing" secondItem="imp-Ek-ath" secondAttribute="trailing" id="3aa-fR-bFw"/>
+                            <constraint firstAttribute="bottom" secondItem="imp-Ek-ath" secondAttribute="bottom" id="BaN-nE-Upo"/>
+                            <constraint firstItem="sR0-1K-cv7" firstAttribute="leading" secondItem="imp-Ek-ath" secondAttribute="trailing" id="Ccw-rz-36b"/>
+                            <constraint firstItem="oKu-OY-ZUf" firstAttribute="trailing" secondItem="sR0-1K-cv7" secondAttribute="trailing" id="D1a-Ua-Lts"/>
+                            <constraint firstItem="imp-Ek-ath" firstAttribute="leading" secondItem="oKu-OY-ZUf" secondAttribute="leading" id="H24-Xf-hSU"/>
+                            <constraint firstItem="oKu-OY-ZUf" firstAttribute="bottom" secondItem="sR0-1K-cv7" secondAttribute="bottom" id="Hen-AH-40U"/>
+                            <constraint firstItem="oKu-OY-ZUf" firstAttribute="trailing" secondItem="sR0-1K-cv7" secondAttribute="trailing" id="IkR-2l-xmx"/>
+                            <constraint firstItem="sR0-1K-cv7" firstAttribute="leading" secondItem="oKu-OY-ZUf" secondAttribute="leading" id="KHU-RR-cOS"/>
+                            <constraint firstItem="imp-Ek-ath" firstAttribute="top" secondItem="oKu-OY-ZUf" secondAttribute="top" id="OdO-VQ-U4j"/>
+                            <constraint firstAttribute="bottom" secondItem="sR0-1K-cv7" secondAttribute="bottom" id="azm-xH-nVK"/>
+                            <constraint firstItem="sR0-1K-cv7" firstAttribute="top" secondItem="imp-Ek-ath" secondAttribute="bottom" id="eST-nb-1P1"/>
+                            <constraint firstItem="sR0-1K-cv7" firstAttribute="top" secondItem="imp-Ek-ath" secondAttribute="bottom" id="hqv-LF-i0q"/>
+                            <constraint firstItem="imp-Ek-ath" firstAttribute="leading" secondItem="Ura-Fy-tNk" secondAttribute="leading" id="mCD-SC-FLT"/>
+                            <constraint firstItem="sR0-1K-cv7" firstAttribute="top" secondItem="oKu-OY-ZUf" secondAttribute="top" id="rXf-L6-vOs"/>
+                            <constraint firstItem="imp-Ek-ath" firstAttribute="top" secondItem="oKu-OY-ZUf" secondAttribute="top" id="y5m-kh-XsX"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="BaN-nE-Upo"/>
+                                <exclude reference="H24-Xf-hSU"/>
+                                <exclude reference="OdO-VQ-U4j"/>
+                                <exclude reference="mCD-SC-FLT"/>
+                                <exclude reference="y5m-kh-XsX"/>
+                                <exclude reference="3aa-fR-bFw"/>
+                                <exclude reference="D1a-Ua-Lts"/>
+                                <exclude reference="Hen-AH-40U"/>
+                                <exclude reference="IkR-2l-xmx"/>
+                                <exclude reference="Ccw-rz-36b"/>
+                                <exclude reference="KHU-RR-cOS"/>
+                                <exclude reference="azm-xH-nVK"/>
+                                <exclude reference="eST-nb-1P1"/>
+                                <exclude reference="hqv-LF-i0q"/>
+                                <exclude reference="rXf-L6-vOs"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="BaN-nE-Upo"/>
+                                <include reference="OdO-VQ-U4j"/>
+                                <include reference="mCD-SC-FLT"/>
+                                <include reference="IkR-2l-xmx"/>
+                                <include reference="Ccw-rz-36b"/>
+                                <include reference="azm-xH-nVK"/>
+                                <include reference="rXf-L6-vOs"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="H24-Xf-hSU"/>
+                                <include reference="y5m-kh-XsX"/>
+                                <include reference="3aa-fR-bFw"/>
+                                <include reference="D1a-Ua-Lts"/>
+                                <include reference="Hen-AH-40U"/>
+                                <include reference="KHU-RR-cOS"/>
+                                <include reference="eST-nb-1P1"/>
+                                <include reference="hqv-LF-i0q"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XdQ-SV-E5u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850.44642857142856" y="82.608695652173921"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
