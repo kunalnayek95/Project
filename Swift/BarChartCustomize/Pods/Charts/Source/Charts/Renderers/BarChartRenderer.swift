@@ -432,6 +432,7 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
             }
             
             //context.fill(barRect)
+            //"Change this section========"
             let bezierPath = UIBezierPath(roundedRect: barRect, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 5, height: 5))
             context.addPath(bezierPath.cgPath)
 
@@ -782,7 +783,10 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                 
                 let trans = dataProvider.getTransformer(forAxis: set.axisDependency)
                 
-                context.setFillColor(set.highlightColor.cgColor)
+                //context.setFillColor(set.highlightColor.cgColor)
+                //MARK: "Change this section========"
+                let highlightColor = UIColor.init(red: 0.0, green: 125.0/255.0, blue: 147.0/255.0, alpha: 1)
+                context.setFillColor(highlightColor.cgColor)
                 context.setAlpha(set.highlightAlpha)
                 
                 let isStack = high.stackIndex >= 0 && e.isStacked
@@ -811,11 +815,19 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                     y2 = 0.0
                 }
                 
-                prepareBarHighlight(x: e.x, y1: y1, y2: y2, barWidthHalf: barData.barWidth / 2.0, trans: trans, rect: &barRect)
+                //"Change this section========"
+                //prepareBarHighlight(x: e.x, y1: y1, y2: y2, barWidthHalf: barData.barWidth / 2.0, trans: trans, rect: &barRect)
+                let temp = ((barData.barWidth+0.5)/2.0) - (barData.barWidth/2)
+                prepareBarHighlight(x: e.x, y1: y1+temp, y2: y2, barWidthHalf: (barData.barWidth+0.5) / 2.0, trans: trans, rect: &barRect)
                 
                 setHighlightDrawPos(highlight: high, barRect: barRect)
                 
-                context.fill(barRect)
+                //"Change this section========"
+                //context.fill(barRect)
+                let bezierPath = UIBezierPath(roundedRect: barRect, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 5, height: 5))
+                context.addPath(bezierPath.cgPath)
+
+                context.drawPath(using: .fill)
             }
         }
         

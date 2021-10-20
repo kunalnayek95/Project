@@ -8,6 +8,7 @@
 import UIKit
 import Charts
 
+//MARK: Search with "Change this section========"
 class ViewController: UIViewController {
     
     @IBOutlet weak var barChartView: BarChartView!
@@ -19,7 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec","Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0,20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
+        let unitsSold = [18.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0,22.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
         setChart(dataPoints: months, values: unitsSold)
     }
     
@@ -56,6 +57,9 @@ class ViewController: UIViewController {
         barChartView.leftAxis.gridColor = NSUIColor.gray.withAlphaComponent(0.9)
         let floatValue: [CGFloat] = [5,5]
         barChartView.leftAxis.gridLineDashLengths = floatValue
+        barChartView.leftAxis.labelCount = 4
+        barChartView.xAxis.labelCount = 4
+        barChartView.doubleTapToZoomEnabled = false
         
         barChartView.delegate = self
     }
@@ -68,7 +72,15 @@ class ViewController: UIViewController {
 
 extension ViewController: ChartViewDelegate{
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: Highlight) {
-        print(entry.x, entry.y)
+        //        if let dataSet = chartView.data?.dataSets[ highlight.dataSetIndex] {
+        //
+        //            let sliceIndex: Int = dataSet.entryIndex( entry: entry)
+        //            print( "Selected slice index: \( sliceIndex)")
+        //            totalAmntHeaderLbl.text = "\(spentNameArr[sliceIndex] )"
+        //            totalAmntLbl.text = "$\(self.formatNumber(Str: "\(money[sliceIndex])"))"
+        //            totalAmntPercentLbl.text = "(\(self.formatNumber(Str: "\((money[sliceIndex]/totalPieAmnt)*100)"))%)"
+        //            totalAmntPercentLbl.isHidden = false
+        //        }
     }
 }
 
