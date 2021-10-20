@@ -1,0 +1,6 @@
+framework module Pods_BarChartCustomize_BarChartCustomizeUITests {
+  umbrella header "Pods-BarChartCustomize-BarChartCustomizeUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
