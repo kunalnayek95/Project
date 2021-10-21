@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        barChartView.delegate = self
+        
         months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec","Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         let unitsSold = [18.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0,22.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
         setChart(dataPoints: months, values: unitsSold)
@@ -60,8 +62,8 @@ class ViewController: UIViewController {
         barChartView.leftAxis.labelCount = 4
         barChartView.xAxis.labelCount = 4
         barChartView.doubleTapToZoomEnabled = false
-        
-        barChartView.delegate = self
+        //barChartView.highlightPerTapEnabled = true
+    
     }
     
     @IBAction func backBtn(_ sender: UIButton){
@@ -71,16 +73,16 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: ChartViewDelegate{
-    func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: Highlight) {
-        //        if let dataSet = chartView.data?.dataSets[ highlight.dataSetIndex] {
-        //
-        //            let sliceIndex: Int = dataSet.entryIndex( entry: entry)
-        //            print( "Selected slice index: \( sliceIndex)")
-        //            totalAmntHeaderLbl.text = "\(spentNameArr[sliceIndex] )"
-        //            totalAmntLbl.text = "$\(self.formatNumber(Str: "\(money[sliceIndex])"))"
-        //            totalAmntPercentLbl.text = "(\(self.formatNumber(Str: "\((money[sliceIndex]/totalPieAmnt)*100)"))%)"
-        //            totalAmntPercentLbl.isHidden = false
-        //        }
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        if let dataSet = chartView.data?.dataSets[ highlight.dataSetIndex] {
+            
+            let barIndex: Int = dataSet.entryIndex( entry: entry)
+            print( "Selected bar index: \(barIndex)")
+//            totalAmntHeaderLbl.text = "\(spentNameArr[sliceIndex] )"
+//            totalAmntLbl.text = "$\(self.formatNumber(Str: "\(money[sliceIndex])"))"
+//            totalAmntPercentLbl.text = "(\(self.formatNumber(Str: "\((money[sliceIndex]/totalPieAmnt)*100)"))%)"
+//            totalAmntPercentLbl.isHidden = false
+        }
     }
 }
 
