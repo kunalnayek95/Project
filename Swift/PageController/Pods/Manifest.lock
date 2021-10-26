@@ -1,0 +1,16 @@
+PODS:
+  - FlexiblePageControl (1.0.8)
+
+DEPENDENCIES:
+  - FlexiblePageControl
+
+SPEC REPOS:
+  trunk:
+    - FlexiblePageControl
+
+SPEC CHECKSUMS:
+  FlexiblePageControl: 07f7765054f16b3f0bc3f14dfd95ab5f45817ea4
+
+PODFILE CHECKSUM: 70b2acfd8c1e273caaa51f9eb4ae18b53dc8baa2
+
+COCOAPODS: 1.11.2
