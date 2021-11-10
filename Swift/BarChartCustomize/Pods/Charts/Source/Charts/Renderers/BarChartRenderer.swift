@@ -820,11 +820,19 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                 let temp = ((barData.barWidth+0.5)/2.0) - (barData.barWidth/2)
                 prepareBarHighlight(x: e.x, y1: y1+temp, y2: y2, barWidthHalf: (barData.barWidth+0.5) / 2.0, trans: trans, rect: &barRect)
                 
+                
+                print(barRect)
+                //bar fix by santanu
+                barRect.origin.y -= barRect.size.width/4
+                barRect.size.height += barRect.size.width/4
+                
+                print(barRect)
                 setHighlightDrawPos(highlight: high, barRect: barRect)
                 
                 //"Change this section========"
                 //context.fill(barRect)
-                let bezierPath = UIBezierPath(roundedRect: barRect, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 5, height: 5))
+                //let bezierPath = UIBezierPath(roundedRect: barRect, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 5, height: 5))
+                let bezierPath = UIBezierPath(roundedRect: barRect, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width:  barRect.size.width/2, height: barRect.size.width/2))
                 context.addPath(bezierPath.cgPath)
 
                 context.drawPath(using: .fill)
