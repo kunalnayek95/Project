@@ -17,33 +17,34 @@ let sumClouser: (Int , Int) -> Int = { (a,b) in
 //let answer = sumClouser(20, 10)
 //print(answer)
 
-//MARK: - Clouser As parameter
 
+//MARK: - Clouser As parameter
 func closuserFun(name: String, clouser: (String) -> ()){
     let str = name.capitalized
     clouser(str)
 }
 
-//1 way of call
+//1st way of call
 //closuserFun(name: "kunal nayek", clouser: { name in
 //    print(name)
 //})
+
 
 //2nd way of call
 //closuserFun(name: "kunal nayek") { name in
 //    print(name)
 //}
 
-//3rd way of call
 
+//3rd way of call
 let printName: (String) -> () = { name in
     print(name)
 }
-
 //closuserFun(name: "kunal nayek", clouser: printName)
 
-// Bydefault all clouser are now nonescaping
 
+
+// Bydefault all clouser are now nonescaping
 //Escaping Clouser
 func closuserEsc(name: String, clouser: @escaping (String) -> ()){
     print("Start of clouser func")
