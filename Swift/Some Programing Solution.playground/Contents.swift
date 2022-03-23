@@ -28,6 +28,8 @@ func pacselTriangle(_ nunberOfRow: Int) -> [[Int]]{
         
         result.append(newRow)
     }
+    
+    
     return result
 }
 
