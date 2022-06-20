@@ -1,6 +1,15 @@
 import UIKit
 import Foundation
 
+// MARK: - Remove elements from an array
+var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+let indexesToRemove = [3, 5, 8, 12]
+
+numbers = numbers.enumerated().filter{!indexesToRemove.contains($0.offset)}.map{$0.element}
+
+print(numbers)
+
+
 
 
 //Pascel triangle
